@@ -1,5 +1,6 @@
+
 // ==UserScript==
-// @name         自用视频解析
+// @name         自用github版本解析
 // @match        *://v.youku.com/v_show/*
 // @match        *://*.iqiyi.com/v_*
 // @match        *://*.iqiyi.com/dianying/*
@@ -41,7 +42,7 @@
     var reYJ = /1905/i;
     var rePP = /pptv/i;
     var reYYT = /yinyuetai/i;
-    var vipBtn = '<a id="goudidiaoVipBtn" style="cursor:pointer;text-decoration:none;color:red;padding:0 5px;border:1px solid red;">解析</a>';
+    var vipBtn = '<a id="goudidiaoVipBtn" style="cursor:pointer;text-decoration:none;color:#78BBE6;padding:0 5px;border:1px solid #78BBE6;">解析</a>';
     var mSearchBtn = '';
     var currentPage = window.location.href;
     var isHttps = window.location.href.indexOf('https');
@@ -135,8 +136,7 @@
         var shTitle = $($('.crumbs').parent().children()[1]);
         shTitle.append(vipBtn).append(mSearchBtn);
         shTitle.find('h2').css({'float':'left'});
-        $('#goudidiaoVipBtn').css({'font-weight':'bold','font-size':'17px','display':'inline-block','height':'18px','margin':'0 5px'});
-        $('#goudidiaoSearchBtn').css({'font-weight':'bold','font-size':'16px','display':'inline-block','height':'20px','line-height':'36px','margin':'0 5px'});
+        $('#goudidiaoVipBtn').css({'font-weight':'light','font-size':'17px','display':'inline-block','height':'18px','margin':'0 5px'});
         curWords = shTitle.find('h2').text();
         $('#goudidiaoSearchBtn').attr('href',redirectTo);
     }
